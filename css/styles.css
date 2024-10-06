@@ -61,9 +61,12 @@ h3{
 p, li{
     font-family: Sharp Grotesk, Arial, Helvetica, sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     color: #FFFFFF;
-    line-height: 18px;
+    line-height: 22px;
+}
+a{
+    color: #00AC1C;
 }
 
 ul{
@@ -72,12 +75,15 @@ ul{
 
 .video{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 1rem;
 }
 
 video{
     width: 70%;
+    border: 3px solid #FFFFFF;
+    border-radius: 8px;
 }
 
 .description{
