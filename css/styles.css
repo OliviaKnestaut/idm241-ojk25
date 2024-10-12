@@ -25,7 +25,6 @@ body{
     background-image: linear-gradient(#1F262D, #14181C);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
 }
 
 header{
@@ -44,7 +43,7 @@ h1{
     font-weight: 500;
     color: #FFFFFF;
     font-size: 2em;
-    margin: 0.5em;
+    margin: 0.20em;
 }
 
 h2{
@@ -87,8 +86,7 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem;
-    margin-bottom: 0;
+    margin: 0 1rem;
 }
 
 video{
@@ -146,3 +144,4 @@ video{
         width: 70%;
     }
 }
+

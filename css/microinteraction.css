@@ -1,0 +1,163 @@
+.alpha-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 10px;
+}
+
+.alpha{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    flex-direction: column-reverse;
+    height: 197.5px;
+    width: 135px;
+}
+
+.tile{
+    display: block;
+    position: relative;
+    width: 125px;
+    margin: 5px;
+    margin-top: 0;
+}
+
+.tile a{
+    box-shadow: inset 0 0 1px #def;
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-indent: 110%;
+    top: 0;
+}
+
+.poster{
+    width: 125px;
+    border-radius: 3px;
+    display: block;
+}
+
+.poster .border{
+    border: 1px solid #def;
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px 1px rgba(20, 24, 28, .125);
+    display: block;
+    overflow: hidden;
+    position: absolute;
+
+    top: -3px;
+    bottom: -3px;
+    right: -3px;
+    left: -3px;
+
+    transition: border .1s linear;
+    white-space: nowrap;
+}
+
+.poster:hover .border{
+    border-width: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: border .1s linear;
+}
+
+.overlay{
+    background: rgba(0, 0, 0, .8);
+    border-radius: 4px;
+    bottom: 10px;
+    display: block;
+    display: none;
+    height: 28px;
+    left: 50%;
+    margin-left: -42px;
+    padding: 0;
+    position: absolute;
+    width: 84px;
+}
+.poster:hover .overlay{
+    display: inline;
+}
+
+.icons {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 84px;
+    height: 28px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.icon{
+    display: block;
+    width: 22px;
+    height: 16px;
+}
+
+.view{
+    background: url(../files/view-icon.svg) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.like{
+    background: url(../files/like-icon.svg) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.menu{
+    background: url(../files/menu-icon.svg) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.tooltip{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px 2px 0 2px;
+    opacity: 0;
+    z-index: 1000;
+}
+.tooltip-arrow{
+    display: block;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #456;
+}
+.tooltip-text{
+    display: block;
+    background: #456;
+    border-radius: 4px;
+    max-width: 360px;
+    
+    font-family: Sharp Grotesk, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #bcd;
+    font-size: 10px;
+    line-height: 1.3;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, .1);
+
+    padding: 6px 9px 5px;
+    margin: 0;
+    margin-bottom: -0.5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.tile:hover + .tooltip{
+    opacity: 1;
+    transition: opacity .15s linear;
+    transition-delay: 2s;
+}

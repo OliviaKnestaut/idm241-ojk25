@@ -3,18 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDM-241 Alpha</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>IDM-241 Alpha Build</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/microinteraction.css">
 </head>
 <body>
     <header>
-        <img src="files/logo.svg" alt="">
-        <h1>Alpha Description</h1>
+        <img src="../files/logo.svg" alt="">
+        <h1>Alpha Build</h1>
     </header>
 
     <section class="link">
-        <h2><a href="https://letterboxd.com/" target="_blank">https://letterboxd.com/</a></h2>
         <h1>Movie Tile</h1>
+    </section>
+
+
+    <section class="alpha-container">
+        <div class="alpha">
+            <div class="tile">
+                <a class="poster" href="https://letterboxd.com/film/pride-prejudice/">
+                    <span class="border"></span>
+                    <span class="overlay">
+                        <span class="icons">
+                            <span class="icon view"></span>
+                            <span class="icon like"></span>
+                            <span class="icon menu"></span>
+                        </span>
+                    </span>
+                </a>
+                <img class="poster" src="../files/pride-and-prejudice-poster.jpg" alt="Movie poster from Pride and Prejudice (2005)">
+            </div>
+            <div class="tooltip">
+                <p class="tooltip-text">Pride & Prejudice (2005)</p>
+                <span class="tooltip-arrow"></span>
+            </div>
+        </div>
+
+        <div class="alpha">
+            <div class="tile">
+                <a class="poster" href="https://letterboxd.com/film/jaws/">
+                    <span class="border"></span>
+                    <span class="overlay">
+                        <span class="icons">
+                            <span class="icon view"></span>
+                            <span class="icon like"></span>
+                            <span class="icon menu"></span>
+                        </span>
+                    </span>
+                </a>
+                <img class="poster" src="../files/jaws-poster.jpg" alt="Movie poster from Jaws (1975)">
+            </div>
+            <div class="tooltip">
+                <p class="tooltip-text">Jaws (1975)</p>
+                <span class="tooltip-arrow"></span>
+            </div>
+        </div>
+
+        <div class="alpha">
+            <div class="tile">
+                <a class="poster" href="https://letterboxd.com/film/howls-moving-castle/">
+                    <span class="border"></span>
+                    <span class="overlay">
+                        <span class="icons">
+                            <span class="icon view"></span>
+                            <span class="icon like"></span>
+                            <span class="icon menu"></span>
+                        </span>
+                    </span>
+                </a>
+                <img class="poster" src="../files/howls-moving-castle-poster.jpg" alt="Movie poster from Howl's Moving Castle (2004)">
+            </div>
+            <div class="tooltip">
+                <p class="tooltip-text">Howl's Moving Castle (2004)</p>
+                <span class="tooltip-arrow"></span>
+            </div>
+        </div>
+        
+        
     </section>
 
     <section class="description">
@@ -22,7 +87,7 @@
             <h2>Triggers</h2>
             <ul>
                 <li>Hover On</li>
-                <li>Hover On + 300ms Delay</li>
+                <li>Hover On + 2s Delay</li>
                 <li>Hover Off</li>
                 <li>On Click (Mouse Up)</li>
             </ul>
@@ -37,7 +102,7 @@
                         <li>Icons appear on bottom of tile (eye, heart, three dots)</li>
                     </ul>
                 </li>
-                <li><b>Hover On + 300ms Delay</b>
+                <li><b>Hover On + 2s Delay</b>
                     <ul>
                         <li>Tooltip appears above with movie information</li>
                     </ul>
@@ -47,6 +112,7 @@
                         <li>Cursor changes back to default/pointer</li>
                         <li>Border slides away</li>
                         <li>Icons bottom of tile disappear (eye, heart, three dots)</li>
+                        <li>Tooltip above disappears</li>
                     </ul>
                 </li>
                 <li><b>On Click (Mouse Up)</b>
@@ -66,7 +132,7 @@
                         <li>Icons appear on bottom of tile (eye, heart, three dots)</li>
                     </ul>
                 </li>
-                <li><b>Hover On + 300ms Delay</b>
+                <li><b>Hover On + 2s Delay</b>
                     <ul>
                         <li>Tooltip appears above with movie information</li>
                     </ul>
@@ -76,6 +142,7 @@
                         <li>Cursor changes back to default/pointer</li>
                         <li>Border slides away</li>
                         <li>Icons bottom of tile disappear (eye, heart, three dots)</li>
+                        <li>Tooltip above disappears</li>
                     </ul>
                 </li>
                 <li><b>On Click (Mouse Up)</b>
@@ -98,7 +165,7 @@
                             <li>Icons appear on bottom of tile (eye, heart, three dots)</li>
                         </ul>
                     </li>
-                    <li><b>Hover On + 300ms Delay</b>
+                    <li><b>Hover On + 2s Delay</b>
                         <ul>
                             <li>Tooltip appears above with movie information</li>
                         </ul>
@@ -106,13 +173,6 @@
                 </ul>
         </div>
     </section>
-
-    <section class="video">
-        <video controls>
-            <source src="files/IDM241-interaction_video.mp4" type="video/mp4">
-        </video>
-    </section>
     
-
 </body>
 </html>
