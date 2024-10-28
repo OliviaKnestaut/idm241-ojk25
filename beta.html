@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDM-241 Beta Description</title>
+    <link rel="stylesheet" href="css/beta_styles.css">
+</head>
+<body>
+    <header>
+        <img src="files/logo.svg" alt="">
+        <h1>Beta Description</h1>
+    </header>
+
+    <section class="link">
+        <h2><a href="https://letterboxd.com/" target="_blank">https://letterboxd.com/</a></h2>
+    </section>
+
+    <section class="description">
+        <div>
+            <div>
+                <h2>Triggers</h2>
+                <div>
+                    <div>
+                        <h3>Movie Tile</h3>
+                        <ul>
+                            <li>Hover On</li>
+                            <li>Hover On + 2s Delay</li>
+                            <li>Hover Off</li>
+                            <li>On Click (Mouse Up)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>Viewed Button - Default</h3>
+                            <ul>
+                                <li>Hover On</li>
+                                <li>Hover Off</li>
+                                <li>Mouse Down</li>
+                                <li>Mouse Up</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Viewed Button - Active</h3>
+                            <ul>
+                                <li>Hover On</li>
+                                <li>Hover Off</li>
+                                <li>Mouse Down</li>
+                                <li>Mouse Up</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div> 
+                        <div>
+                            <h3>Like Button - Default</h3>
+                            <ul>
+                                <li>Hover On</li>
+                                <li>Hover Off</li>
+                                <li>Mouse Down</li>
+                                <li>Mouse Up</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Like Button - Active</h3>
+                            <ul>
+                                <li>Hover On</li>
+                                <li>Hover Off</li>
+                                <li>Mouse Down</li>
+                                <li>Mouse Up</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div>
+                <h2>Rules</h2>
+                <div>
+                    <div>
+                        <h3>Movie Tile</h3>
+                        <ul>
+                            <li><b>Hover On</b>
+                                <ul>
+                                    <li>Cursor changes to finger</li>
+                                    <li>Tile size increases by 5%</li>
+                                    <li>Border expands from inside edge</li>
+                                    <li>Icons on black box fade in at bottom of tile (eye, heart, three dots)</li>
+                                </ul>
+                            </li>
+                            <li><b>Hover On + 2s Delay</b>
+                                <ul>
+                                    <li>Tooltip slides up from behind tile with movie information (title and year)</li>
+                                </ul>
+                            </li>
+                            <li><b>Hover Off</b>
+                                <ul>
+                                    <li>Cursor changes back to default/pointer</li>
+                                    <li>Border slides away</li>
+                                    <li>Icons and black box fade out from the bottom of the tile (eye, heart, three dots)</li>
+                                    <li>Tile shrinks down 5% to original size</li>
+                                    <li>Tooltip slides back down behind tile</li>
+                                </ul>
+                            </li>
+                            <li><b>On Click (Mouse Up)</b>
+                                <ul>
+                                    <li>Navigates to the movie's Letterboxd review webpage</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>Viewed Button - Default</h3>
+                            <div>
+                                <ul>
+                                    <li><b>Hover On</b>
+                                        <ul>
+                                            <li>Icon changes to 60% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Hover Off</b>
+                                        <ul>
+                                            <li>Icon returns to 100% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Down</b>
+                                        <ul>
+                                            <li>Icon size decreases by 10%</li>
+                                            <li>Icon color changes to green</li>
+                                            <li>Icon remains at 60% opacity (from hover)</li>
+                                            <li>Green gradient rises from tile's bottom edge</li>
+                                            <li>Lower edge of tile border changes to green</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Up</b>
+                                        <ul>
+                                            <li>Icon size increases by 10% (returns to default size)</li>
+                                            <li>Icon changes to 100% opacity</li>
+                                            <li>Green gradient on tile fades away</li>
+                                            <li>Tile border changes to green completely</li>
+                                            <li>Icon bar moves up from bottom edge to enable star rating</li>
+                                            <li>movieViewed is set to TRUE in the database</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Viewed Button - Active</h3>
+                            <div>
+                                <ul>
+                                    <li><b>Hover On</b>
+                                        <ul>
+                                            <li>Icon changes to 60% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Hover Off</b>
+                                        <ul>
+                                            <li>Icon returns to 100% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Down</b>
+                                        <ul>
+                                            <li>Icon size decreases by 10%</li>
+                                            <li>Icon color changes to white</li>
+                                            <li>Icon remains at 60% opacity (from hover)</li>
+                                            <li>Lower edge of tile border changes to white</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Up</b>
+                                        <ul>
+                                            <li>Icon size increases by 10% (returns to default size)</li>
+                                            <li>Icon changes to 100% opacity</li>
+                                            <li>Tile border changes to white completely</li>
+                                            <li>Icon bar slides down to hide star rating</li>
+                                            <li>movieViewed is set to FALSE in the database</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <div>
+                            <h3>Like Button - Deafult</h3>
+                            <div>
+                                <ul>
+                                    <li><b>Hover On</b>
+                                        <ul>
+                                            <li>Icon changes to 60% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Hover Off</b>
+                                        <ul>
+                                            <li>Icon returns to 100% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Down</b>
+                                        <ul>
+                                            <li>Icon size decreases by 10%</li>
+                                            <li>Icon color changes to orange</li>
+                                            <li>Icon remains at 60% opacity (from hover)</li>
+                                            <li>Orange gradient rises from tile's bottom edge</li>
+                                            <li>Lower edge of tile border changes to orange</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Up</b>
+                                        <ul>
+                                            <li>Icon size increases by 10% (returns to default size)</li>
+                                            <li>Icon changes to 100% opacity</li>
+                                            <li>Orange gradient on tile fades away</li>
+                                            <li>Tile border changes to orange completely</li>
+                                            <li>movieLiked is set to TRUE in the database</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Like Button - Active</h3>
+                            <div>
+                                <ul>
+                                    <li><b>Hover On</b>
+                                        <ul>
+                                            <li>Icon changes to 60% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Hover Off</b>
+                                        <ul>
+                                            <li>Icon returns to 100% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Down</b>
+                                        <ul>
+                                            <li>Icon size decreases by 10%</li>
+                                            <li>Icon color changes to white</li>
+                                            <li>Icon remains at 60% opacity (from hover)</li>
+                                            <li>Lower edge of tile border changes to white</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Up</b>
+                                        <ul>
+                                            <li>Icon size increases by 10% (returns to default size)</li>
+                                            <li>Icon changes to 100% opacity</li>
+                                            <li>Tile border changes to white completely</li>
+                                            <li>movieLiked is set to FALSE in the database</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Feedback</h2>
+                <div>
+                    <div>
+                        <h3>Movie Tile</h3>
+                        <ul>
+                            <li><b>Hover On</b>
+                                <ul>
+                                    <li>Cursor changes to finger</li>
+                                    <li>Tile size increases by 5%</li>
+                                    <li>Border expands from inside edge</li>
+                                    <li>Icons on black box fade in at bottom of tile (eye, heart, three dots)</li>
+                                </ul>
+                            </li>
+                            <li><b>Hover On + 2s Delay</b>
+                                <ul>
+                                    <li>Tooltip slides up from behind tile with movie information (title and year)</li>
+                                </ul>
+                            </li>
+                            <li><b>Hover Off</b>
+                                <ul>
+                                    <li>Cursor changes back to default/pointer</li>
+                                    <li>Border slides away</li>
+                                    <li>Icons and black box fade out from the bottom of the tile (eye, heart, three dots)</li>
+                                    <li>Tile shrinks down 5% to original size</li>
+                                    <li>Tooltip slides back down behind tile</li>
+                                </ul>
+                            </li>
+                            <li><b>On Click (Mouse Up)</b>
+                                <ul>
+                                    <li>Navigates to the movie's Letterboxd review webpage</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>Viewed Button - Default</h3>
+                            <div>
+                                <ul>
+                                    <li><b>Hover On</b>
+                                        <ul>
+                                            <li>Icon changes to 60% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Hover Off</b>
+                                        <ul>
+                                            <li>Icon returns to 100% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Down</b>
+                                        <ul>
+                                            <li>Icon size decreases by 10%</li>
+                                            <li>Icon color changes to green</li>
+                                            <li>Icon remains at 60% opacity (from hover)</li>
+                                            <li>Green gradient rises from tile's bottom edge</li>
+                                            <li>Lower edge of tile border changes to green</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Up</b>
+                                        <ul>
+                                            <li>Icon size increases by 10% (returns to default size)</li>
+                                            <li>Icon changes to 100% opacity</li>
+                                            <li>Green gradient on tile fades away</li>
+                                            <li>Tile border changes to green completely</li>
+                                            <li>Icon bar moves up from bottom edge to enable star rating</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Viewed Button - Active</h3>
+                            <div>
+                                <ul>
+                                    <li><b>Hover On</b>
+                                        <ul>
+                                            <li>Icon changes to 60% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Hover Off</b>
+                                        <ul>
+                                            <li>Icon returns to 100% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Down</b>
+                                        <ul>
+                                            <li>Icon size decreases by 10%</li>
+                                            <li>Icon color changes to white</li>
+                                            <li>Icon remains at 60% opacity (from hover)</li>
+                                            <li>Lower edge of tile border changes to white</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Up</b>
+                                        <ul>
+                                            <li>Icon size increases by 10% (returns to default size)</li>
+                                            <li>Icon changes to 100% opacity</li>
+                                            <li>Tile border changes to white completely</li>
+                                            <li>Icon bar slides down to hide star rating</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>Like Button - Deafult</h3>
+                            <div>
+                                <ul>
+                                    <li><b>Hover On</b>
+                                        <ul>
+                                            <li>Icon changes to 60% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Hover Off</b>
+                                        <ul>
+                                            <li>Icon returns to 100% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Down</b>
+                                        <ul>
+                                            <li>Icon size decreases by 10%</li>
+                                            <li>Icon color changes to orange</li>
+                                            <li>Icon remains at 60% opacity (from hover)</li>
+                                            <li>Orange gradient rises from tile's bottom edge</li>
+                                            <li>Lower edge of tile border changes to orange</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Up</b>
+                                        <ul>
+                                            <li>Icon size increases by 10% (returns to default size)</li>
+                                            <li>Icon changes to 100% opacity</li>
+                                            <li>Orange gradient on tile fades away</li>
+                                            <li>Tile border changes to orange completely</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Like Button - Active</h3>
+                            <div>
+                                <ul>
+                                    <li><b>Hover On</b>
+                                        <ul>
+                                            <li>Icon changes to 60% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Hover Off</b>
+                                        <ul>
+                                            <li>Icon returns to 100% opacity</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Down</b>
+                                        <ul>
+                                            <li>Icon size decreases by 10%</li>
+                                            <li>Icon color changes to white</li>
+                                            <li>Icon remains at 60% opacity (from hover)</li>
+                                            <li>Lower edge of tile border changes to white</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Mouse Up</b>
+                                        <ul>
+                                            <li>Icon size increases by 10% (returns to default size)</li>
+                                            <li>Icon changes to 100% opacity</li>
+                                            <li>Tile border changes to white completely</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>Loops and Modes</h2>
+                <div>
+                    <div>
+                        <h3>Movie Tile</h3>
+                        <h4>Loops</h4>
+                        <ul>
+                            <li>None</li>
+                        </ul>
+                        <h4>Modes</h4>
+                        <ul>
+                            <li><b>Hover On</b>
+                                <ul>
+                                    <li>Icons appear on bottom of tile (eye, heart, three dots)</li>
+                                </ul>
+                            </li>
+                            <li><b>Hover On + 2s Delay</b>
+                                <ul>
+                                    <li>Tooltip appears above with movie information</li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <h3>Viewed Button - Default</h3>
+                                <h4>Loops</h4>
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                <h4>Modes</h4>
+                                <ul>
+                                    <li><b>Mouse Up</b>
+                                        <ul>
+                                            <li>User becomes able to rate movie</li>
+                                            <li>Rating interaction becomes visible on bottom of tile</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3>Viewed Button - Active</h3>
+                                <h4>Loops</h4>
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                <h4>Modes</h4>
+                                <ul>
+                                    <li><b>Mouse Up</b>
+                                        <ul>
+                                            <li>User becomes unable to rate movie</li>
+                                            <li>Rating interaction is hidden at bottom of tile</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <h3>Like Button - Default</h3>
+                                <h4>Loops</h4>
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                <h4>Modes</h4>
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3>Like Button - Active</h3>
+                                <h4>Loops</h4>
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                <h4>Modes</h4>
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+            
+
+    </section>
+
+    <section class="image">
+        <div class="interaction-img smaller">
+            <h2>Movie Tile</h2>
+            <img src="files/beta-interaction-1.png" alt="">
+        </div>
+        <div class="interaction-img">
+            <h2>Viewed Button - Default</h2>
+            <img src="files/beta-interaction-2.png" alt="">
+        </div>
+        <div class="interaction-img">
+            <h2>Viewed Button - Active</h2>
+            <img src="files/beta-interaction-2-active.png" alt="">
+        </div>
+        <div class="interaction-img smaller">
+            <h2>Like Button - Default</h2>
+            <img src="files/beta-interaction-3.png" alt="">
+        </div>
+        <div class="interaction-img smaller">
+            <h2>Like Button - Active</h2>
+            <img src="files/beta-interaction-3-active.png" alt="">
+        </div>
+    </section>
+    
+
+</body>
+</html>
