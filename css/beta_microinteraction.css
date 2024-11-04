@@ -1,0 +1,412 @@
+.beta-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 10px;
+}
+
+.beta{
+    position: relative;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    flex-direction: column-reverse;
+    height: 197.5px;
+    width: 135px;
+}
+
+.movie-link{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+}
+
+/*---------------------------POSTER IMG AND BORDER ------------------------*/
+
+
+.tile{
+    display: block;
+    position: relative;
+    width: 125px;
+    margin: 5px;
+    margin-top: 0;
+    transition: transform .3s ease;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.tile div{
+    box-shadow: inset 0 0 1px #def;
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-indent: 110%;
+    top: 0;
+}
+
+
+.poster{
+    width: 125px;
+    border-radius: 3px;
+    display: block;
+}
+
+.tile:hover{
+    transform: scale(1.05);
+}
+
+.poster .border{
+    border: 1px solid #def;
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px 1px rgba(20, 24, 28, .125);
+    display: block;
+    overflow: hidden;
+    position: absolute;
+
+    top: -3px;
+    bottom: -3px;
+    right: -3px;
+    left: -3px;
+
+    transition: border .3s linear;
+    white-space: nowrap;
+}
+
+.poster:hover .border{
+    border-width: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: border .3s linear;
+}
+
+.gradient-fade{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.liked-gradient {
+    background: linear-gradient(to top, rgba(0, 224, 84, 0), rgba(255, 128, 0, 1), rgba(0, 224, 84, 0));
+    background-size: 600% 600%;
+    opacity: 0;
+    animation: orange-gradient 2s forwards;
+}
+
+@keyframes orange-gradient {
+    0%{
+        background-position:50% 0%;
+        opacity: 1;
+    }
+    100%{
+        background-position:50% 100%;
+        opacity: 0;
+    }
+}
+
+.viewed-gradient {
+    background: linear-gradient(to top, rgba(0, 224, 84, 0), rgba(0, 224, 84, 1), rgba(0, 224, 84, 0));
+    background-size: 600% 600%;
+    opacity: 0;
+    animation: green-gradient 2s forwards;
+}
+
+@keyframes green-gradient {
+    0%{
+        background-position:50% 0%;
+        opacity: 1;
+    }
+    100%{
+        background-position:50% 100%;
+        opacity: 0;
+    }
+}
+
+
+
+
+/*---------------------------OVERLAY WITH ICONS ------------------------*/
+.overlay {
+    display: inline;
+    background: rgba(0, 0, 0, .7);
+    bottom: -55px;
+    height: 55px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    transition: bottom 0.4s ease;
+
+}
+
+.poster:hover .overlay{
+    bottom: -23px;
+}
+
+
+.icons {
+    display: block;
+    width: 92px;
+    height: 32px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.icon {
+    display: block;
+    width: 23px;
+    height: 15px;
+    margin: auto;
+}
+
+.poster:hover .ratings{
+    bottom: 0 !important;
+}
+
+.stars{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    flex-direction: row;
+    margin: 0 auto;
+    opacity: 0.6;
+}
+.star{
+    display: block;
+    width: 15px;
+    margin: 1px;
+}
+
+
+/*---------------------------TOOLTIP MOVIE TITLE ------------------------*/
+
+.tooltip{
+    position: absolute;
+    top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px 2px 0 2px;
+    z-index: 2;
+    margin-bottom: 3px;
+    opacity: 0;
+    transition: top .4s ease, opacity .4s ease;
+    transition-delay: 0s;
+}
+.tooltip-arrow{
+    display: block;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #456;
+}
+.tooltip-text{
+    display: block;
+    background: #456;
+    border-radius: 30px;
+    max-width: 360px;
+    
+    font-family: Sharp Grotesk, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #bcd;
+    font-size: 10px;
+    line-height: 1.3;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, .1);
+
+    padding: 6px 12px 5px;
+    margin: 0;
+    margin-bottom: -0.5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.tile:hover + .tooltip{
+    top: -35px;
+    opacity: 1;
+    transition-delay: 1.5s;
+}
+
+
+/*---------------------------VIEW BUTTON INTERACTION ------------------------*/
+.view-default{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+.view:hover{
+    opacity: 0.6;
+}
+.view{
+    scale: 1;
+    transition: scale 0.2s ease;
+    transition: filter 0.4s ease;
+}
+.view:active{
+    scale: 0.9;
+}
+.view-active{
+    filter: invert(64%) sepia(56%) saturate(2485%) hue-rotate(95deg) brightness(97%) contrast(109%);
+}
+
+.border-view{
+    animation: green-border-in .6s forwards;
+}
+.border-view-away{
+    animation: green-border-out .6s forwards;
+}
+.border-like-to-view{
+    animation: orange-to-green .6s forwards;
+}
+.border-view-to-like{
+    animation: green-to-orange .6s forwards;
+}
+
+
+@keyframes green-border-in {
+	0% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #def, #def);
+        border-image-slice: 1;
+	}
+	50% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #00E054, #def);
+        border-image-slice: 1;
+	}
+	100% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #00E054, #00E054);
+        border-image-slice: 1;
+	}
+}
+
+@keyframes orange-to-green {
+	0% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #FF8000, #FF8000);
+        border-image-slice: 1;
+	}
+	50% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #00E054, #FF8000);
+        border-image-slice: 1;
+	}
+	100% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #00E054, #00E054);
+        border-image-slice: 1;
+	}
+}
+
+
+@keyframes green-border-out {
+	0% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #00E054, #00E054);
+        border-image-slice: 1;
+	}
+	50% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #00E054, #def);
+        border-image-slice: 1;
+	}
+	100% {
+        border: 3px solid transparent;
+        border-image: linear-gradient(to top, #def, #def);
+        border-image-slice: 1;
+	}
+}
+
+@keyframes green-to-orange {
+	0% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to bottom, #00E054, #00E054);
+        border-image-slice: 1;
+	}
+	50% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to bottom, #FF8000, #00E054);
+        border-image-slice: 1;
+	}
+	100% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to bottom, #FF8000, #FF8000);
+        border-image-slice: 1;
+	}
+}
+
+
+/*---------------------------LIKE BUTTON INTERACTION ------------------------*/
+
+.like-default{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+.like:hover{
+    opacity: 0.6;
+}
+.like{
+    scale: 1;
+    transition: scale 0.2s ease;
+    transition: filter 0.4s ease;
+}
+.like:active{
+    scale: 0.9;
+}
+.like-active{
+    filter: invert(59%) sepia(77%) saturate(3799%) hue-rotate(1deg) brightness(104%) contrast(105%);
+}
+
+.border-like{
+    animation: orange-border-in .6s forwards;
+}
+.border-like-away{
+    animation: orange-border-out .6s backwards;
+}
+
+@keyframes orange-border-in {
+	0% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #def, #def);
+        border-image-slice: 1;
+	}
+	50% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #FF8000, #def);
+        border-image-slice: 1;
+	}
+	100% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #FF8000, #FF8000);
+        border-image-slice: 1;
+	}
+}
+
+@keyframes orange-border-out {
+	0% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #FF8000, #FF8000);
+        border-image-slice: 1;
+	}
+	50% {
+		border: 3px solid transparent;
+        border-image: linear-gradient(to top, #FF8000, #def);
+        border-image-slice: 1;
+	}
+	100% {
+        border: 3px solid transparent;
+        border-image: linear-gradient(to top, #def, #def);
+        border-image-slice: 1;
+	}
+}
