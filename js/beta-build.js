@@ -55,7 +55,7 @@ document.querySelectorAll(".view").forEach(icon => {
                 this.closest(".poster").querySelector(".border").classList.add("border-view");
             }
 
-
+            this.closest(".tile").querySelector(".movie-link").style.height = "70%"
             this.closest(".tile").querySelector(".overlay").classList.add("ratings");
             this.closest(".tile").querySelector(".gradient-fade").classList.add("viewed-gradient");
             
@@ -77,7 +77,7 @@ document.querySelectorAll(".view").forEach(icon => {
                 this.closest(".poster").querySelector(".border").classList.add("border-view-away");  // Add "border-view-away" to the corresponding border
 
             }
-
+            this.closest(".tile").querySelector(".movie-link").style.height = "82.5%"
             this.closest(".tile").querySelector(".gradient-fade").classList.remove("viewed-gradient");
             this.closest(".tile").querySelector(".overlay").classList.remove("ratings");
             
