@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'Sharp Grotesk';
+    src: url(../font/Sharp_Grotesk/SharpGrotesk-SemiBold20.otf) format(opentype);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Sharp Grotesk';
+    src: url(../font/Sharp_Grotesk/SharpGrotesk-Medium20.otf) format(opentype);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Sharp Grotesk';
+    src: url(../font/Sharp_Grotesk/SharpGrotesk-Book20.otf) format(opentype);
+    font-weight: 400;
+}
+ *{
+    box-sizing: border-box;
+}
+
+body{
+    box-sizing: border-box;
+    background: linear-gradient(#20272E, #14181C);
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(#1F262D, #14181C);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header{
+    background-color: #14181C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header img{
+    height: 75px;
+    margin: 0 10px;
+}
+
+h1{
+    font-family: Sharp Grotesk, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+    font-size: 2em;
+    margin: 0.20em;
+}
+
+h2{
+    font-family: Sharp Grotesk, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0.5rem;
+}
+h3{
+    font-family: Sharp Grotesk, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 0.5rem;
+}
+
+h4 {
+    font-family: Sharp Grotesk, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color: #FFFFFF;
+    margin: 0.5rem;
+}
+
+p, li{
+    font-family: Sharp Grotesk, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 22px;
+}
+a{
+    color: #00AC1C;
+}
+
+ul{
+    padding-inline-start: 20px;
+}
+
+.video{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding-bottom: 2rem;
+}
+
+.link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+video{
+    width: 70%;
+    border: 3px solid #FFFFFF;
+    border-radius: 8px;
+}
+
+.description{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.description > div{
+    background-color: #445566;
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 23%;
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+.description > div > div > div{
+    margin-top: 2rem;
+}
+
+@media (width <= 1024px) {
+    .description > div{
+        width: 40%;
+    }
+}
+
+@media (width <= 700px) {
+    header{
+        background-color: #14181C;
+        display: flex;
+        flex-direction: column;
+    }
+    header img{
+        height: 75px;
+        margin: 0 10px;
+    }
+    h1{
+        font-family: Sharp Grotesk, Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        color: #FFFFFF;
+        text-align: center;
+        margin: 15px;
+    }
+
+    video{
+        width: 90%;
+    }
+
+    .description > div{
+        width: 80%;
+    }
+
+    .interaction-img{
+        width: 100% !important;
+    }
+}
+
+
+.image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding-bottom: 2rem;
+}
+
+.interaction-img{
+    width: 70%;
+}
+.interaction-img >img{
+    width: 100%;
+}
+.smaller > img{
+    width: 80%;
+}
+.info1 > img{
+    width: 75%;
+}
+
