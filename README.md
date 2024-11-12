@@ -26,5 +26,5 @@
 
 - Final Description:
     - Code: [final.html](final.html)
-    - Hosted: [https://oknestaut.netlify.app/idm241/beta](https://oknestaut.netlify.app/idm241/final)
+    - Hosted: [https://oknestaut.netlify.app/idm241/final](https://oknestaut.netlify.app/idm241/final)
 - Final Build: TBD
