@@ -15,5 +15,16 @@
 
 ### Beta Assignments
 
-- Beta Description: TBD
-- Beta Build: TBD
+- Beta Description:
+    - Code: [beta.html](beta.html)
+    - Hosted: [https://oknestaut.netlify.app/idm241/beta](https://oknestaut.netlify.app/idm241/beta)
+- Beta Build:
+    - Code: [beta/build.html](beta/build.html)
+    - Hosted: [https://oknestaut.netlify.app/idm241/beta/build](https://oknestaut.netlify.app/idm241/beta/build)
+ 
+### Final Assignments
+
+- Final Description:
+    - Code: [final.html](final.html)
+    - Hosted: [https://oknestaut.netlify.app/idm241/beta](https://oknestaut.netlify.app/idm241/final)
+- Final Build: TBD
