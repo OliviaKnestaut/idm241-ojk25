@@ -61,7 +61,8 @@
     display: block;
 }
 
-.tile:hover{
+
+.tile:hover, .final:hover .tile {
     transform: scale(1.15);
 }
 
@@ -83,13 +84,23 @@
     white-space: nowrap;
 }
 
-.poster:hover .border{
+.poster:hover .border, .final:hover .border{
     border-width: 3px;
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
     transition: border .3s linear;
+}
+
+
+.active-border {
+    border-width: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: border 0.3s linear;
 }
 
 .gradient-fade{
@@ -155,22 +166,28 @@
 
 
 /*---------------------------OVERLAY WITH ICONS ------------------------*/
+
 .overlay {
     display: inline;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, 0.7);
     bottom: -55px;
     height: 55px;
     left: 0;
     position: absolute;
     width: 100%;
-    transition: bottom 0.4s ease;
-
+    transition: bottom 0.4s ease, opacity 0.4s ease;
+    opacity: 0; /* Initially hidden */
 }
 
-.poster:hover .overlay{
+.poster:hover .overlay {
     bottom: -23px;
+    opacity: 1;
 }
 
+.final:hover .overlay {
+    bottom: -23px;
+    opacity: 1;
+}
 
 .icons {
     display: block;
@@ -193,6 +210,12 @@
 
 .poster:hover .ratings{
     bottom: 0 !important;
+    opacity: 1;
+}
+
+.final:hover .ratings{
+    bottom: 0 !important;
+    opacity: 1;
 }
 
 .stars{
@@ -321,12 +344,17 @@
     opacity: 1;
     transition-delay: 1.5s;
 }
+.final:hover .tooltip{
+    top: -45px;
+    opacity: 1;
+    transition-delay: 1.5s;
+}
 
 
 #pride-and-prejudice .tooltip{
     z-index: 1000;
 }
-#pride-and-prejudice{
+#pride-and-prejudice .tile{
     z-index: 1200;
 }
 
@@ -334,7 +362,7 @@
     z-index: 1300;
 }
 
-#jaws{
+#jaws .tile{
     z-index: 1500;
 }
 
@@ -342,9 +370,118 @@
     z-index: 1600;
 }
 
-#howls-moving-castle{
+#howls-moving-castle .tile{
     z-index: 1800;
 }
+
+/*---------------------------MORE BUTTON INTERACTION ------------------------*/
+.more-default{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.menu{
+    scale: 1;
+    transition: 0.3s transform ease, 0.4s filter ease;
+}
+
+.menu:hover{
+    opacity: 0.6;
+}
+.menu:active{
+    transform: scale(0.9);
+}
+
+
+.more-menu{
+    position: absolute;
+    top: 32px;
+    left: 119px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    transition: top .4s ease, opacity .4s ease;
+    transition-delay: 0s;
+    z-index: 2000;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    cursor: pointer;
+    box-shadow: 4px 4px 13.01px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+
+}
+.more-menu div{
+    display: block;
+    background: #456;
+    border-radius: 3px;
+    max-width: 360px;
+}
+.menu-arrow {
+    display: block;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid #456;
+    margin-bottom: 6px;
+    transition: 0.3s border-right ease;
+}
+.menu-text{
+    height: 28px;
+    width: 152px;
+    font-family: Sharp Grotesk, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #bcd;
+    font-size: 12px;
+    line-height: 1.3;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, .1);
+
+    padding: 6px 12px 5px;
+    margin: 0;
+    margin-bottom: -0.5px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px #222A33 solid;
+    border-top: 1px #222A33 solid;
+    transition: 0.3s background-color ease, 0.3s font-size ease, 0.3s line-height ease;
+}
+
+.menu-text:last-child{
+    border-bottom: 0;
+}
+.menu-text:first-child{
+    border-top: 0;
+}
+.menu-text:last-child:hover{
+    border-radius: 0 0 3px 3px;
+}
+.menu-text:first-child:hover{
+    border-radius: 3px 3px 0 0;
+}
+
+.menu-text:hover{
+    background-color: #364452;
+}
+.menu-text:active{
+    background-color: #364452;
+    font-size: 11px;
+    line-height: 1.4;
+    color: rgba(187, 204, 221, .5);
+}
+
+.more-menu.menu-default {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.more-menu.menu-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.more-menu-up{
+    top: 5.5px !important;
+}
+
 
 
 /*---------------------------VIEW BUTTON INTERACTION ------------------------*/
@@ -634,6 +771,9 @@
     .tile:hover + .tooltip {
         top: -65px;
     }
+    .final:hover .tooltip{
+        top: -65px;
+    }
 
     .final{
         margin: 30px 5px;
@@ -643,10 +783,26 @@
         transform: scale(1.3);
     }
 
-    .tile:hover{
+    .tile:hover, .final:hover .tile {
         transform: scale(1.35);
     }
-    
+
+    .more-menu {
+        flex-direction: column-reverse;
+        top: 210px;
+        left: -9px;
+    }
+
+    .menu-arrow {
+        border-top: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #456;
+        margin-bottom: 0;
+        transition: 0.3s border-bottom ease;
+        margin-right: 28px;
+    }
+
 }
 
 

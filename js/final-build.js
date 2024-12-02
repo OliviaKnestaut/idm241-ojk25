@@ -27,7 +27,8 @@ const movies = [
 
 const tiles = document.querySelectorAll('.tile');
 
-/*VIEW BUTTON*/
+/*--------------------------------- VIEW BUTTON -------------------------------------*/
+
 document.querySelectorAll(".view").forEach(icon => {
     icon.addEventListener("click", function() {
         const movie = movies.find(m => m.movieid === this.closest(".final").id);
@@ -38,8 +39,6 @@ document.querySelectorAll(".view").forEach(icon => {
         this.closest(".poster").querySelector(".border").classList.remove("border-like-to-view");
         this.closest(".tile").querySelector(".gradient-fade").classList.remove("liked-gradient");
 
-
-        // Find the movie object in the array that matches the clicked icon's ID
 
         if (this.classList.contains("view-default")) {
             this.classList.remove("view-default");
@@ -60,6 +59,9 @@ document.querySelectorAll(".view").forEach(icon => {
             this.closest(".tile").querySelector(".movie-link").style.height = "70%"
             this.closest(".tile").querySelector(".overlay").classList.add("ratings");
             this.closest(".tile").querySelector(".gradient-fade").classList.add("viewed-gradient");
+            this.closest(".final").querySelector(".more-menu").classList.add("more-menu-up");
+
+
             
             movie.viewed = true; 
 
@@ -96,6 +98,9 @@ document.querySelectorAll(".view").forEach(icon => {
             this.closest(".tile").querySelector(".movie-link").style.height = "82.5%"
             this.closest(".tile").querySelector(".gradient-fade").classList.remove("viewed-gradient");
             this.closest(".tile").querySelector(".overlay").classList.remove("ratings");
+            this.closest(".final").querySelector(".more-menu").classList.remove("more-menu-up");
+
+
             
 
             movie.viewed = false;
@@ -106,7 +111,8 @@ document.querySelectorAll(".view").forEach(icon => {
 });
 
 
-/*LIKE BUTTON*/
+/*--------------------------------- LIKE BUTTON -------------------------------------*/
+
 document.querySelectorAll(".like").forEach(icon => {
     icon.addEventListener("click", function() {
         const movie = movies.find(m => m.movieid === this.closest(".final").id);
@@ -151,7 +157,7 @@ document.querySelectorAll(".like").forEach(icon => {
     });
 });
 
-/*Page Animate Load*/
+/*--------------------------------- ANIMATE PAGE LOAD -------------------------------------*/
 
 document.querySelectorAll(".movie-link").forEach((link) => {
     link.addEventListener("click", function (event) {
@@ -174,7 +180,6 @@ document.querySelectorAll(".movie-link").forEach((link) => {
             loadElement.classList.add("loading-start");
         };
 
-        // Add the animationend listener
         loadElement.addEventListener("animationend", handleAnimationEnd);
     });
 });
@@ -183,12 +188,10 @@ document.querySelectorAll(".movie-link").forEach((link) => {
 tiles.forEach(tile => {
     const movieLink = tile.querySelector('.movie-link');
 
-    // Mouse down: Scale tile to 1
     movieLink.addEventListener('mousedown', () => {
         tile.style.transform = 'scale(1.1)';
     });
 
-    // Mouse up: Scale tile back to 1.05
     movieLink.addEventListener('mouseup', () => {
         tile.style.transform = 'scale(1.15)';
         setTimeout(() => {
@@ -200,7 +203,7 @@ tiles.forEach(tile => {
 
 
 
-/* Star Rating */
+/*--------------------------------- STAR RATING -------------------------------------*/
 
 tiles.forEach((tile) => {
     const starsContainer = tile.querySelector('.stars');
@@ -216,7 +219,6 @@ tiles.forEach((tile) => {
             highlightStars(value, starsContainer);
         });
 
-        // Reset highlight on mouseleave
         starsContainer.addEventListener('mouseleave', function () {
             highlightStars(selectedRating, starsContainer);
         });
@@ -255,9 +257,9 @@ tiles.forEach((tile) => {
 
                 const gradientFade = this.closest(".tile").querySelector(".gradient-fade");
                 gradientFade.classList.remove("viewed-gradient");
+                gradientFade.classList.remove("liked-gradient");
                 gradientFade.classList.add("rated-gradient");
 
-                // Add animationend event listener to remove the rated-gradient class
                 gradientFade.addEventListener('animationend', function handleAnimationEnd() {
                 gradientFade.classList.remove("rated-gradient");
                 gradientFade.removeEventListener('animationend', handleAnimationEnd);
@@ -296,8 +298,6 @@ tiles.forEach((tile) => {
 
     });
 
-
-
     function highlightStars(rating, container) {
         container.querySelectorAll('.star-left, .star-right').forEach((part) => {
             const value = parseFloat(part.dataset.value);
@@ -312,3 +312,57 @@ tiles.forEach((tile) => {
     }
 
 });
+
+/*--------------------------------- MORE MENU -------------------------------------*/
+
+    tiles.forEach(tile => {
+        const menuIcon = tile.querySelector('.menu.more-default');
+        const moreMenu = tile.parentElement.querySelector('.more-menu');
+
+        if (menuIcon && moreMenu) {
+            let isHovered = false;
+
+            menuIcon.addEventListener('click', () => {
+                if (moreMenu.classList.contains('menu-active')) {
+                    moreMenu.classList.remove('menu-active');
+                } else {
+                    moreMenu.classList.add('menu-active');
+                }
+            });
+
+            menuIcon.addEventListener('mouseenter', () => {
+                isHovered = true;
+            });
+            menuIcon.addEventListener('mouseleave', () => {
+                isHovered = false;
+                setTimeout(() => {
+                    if (!isHovered) {
+                        moreMenu.classList.remove('menu-active');
+                    }
+                }, 100);
+            });
+
+            moreMenu.addEventListener('mouseenter', () => {
+                isHovered = true;
+            });
+            moreMenu.addEventListener('mouseleave', () => {
+                isHovered = false;
+                setTimeout(() => {
+                    if (!isHovered) {
+                        moreMenu.classList.remove('menu-active');
+                    }
+                }, 100);
+            });
+        }
+
+        tile.closest(".final").querySelector('.menu-text:last-child').addEventListener('mouseenter', () => {
+            tile.closest(".final").querySelector('.menu-arrow').style.borderRightColor = '#364452';
+        });
+
+        tile.closest(".final").querySelector('.menu-text:last-child').addEventListener('mouseleave', () => {
+            tile.closest(".final").querySelector('.menu-arrow').style.borderRightColor = '';
+        });
+
+    });
+
+
