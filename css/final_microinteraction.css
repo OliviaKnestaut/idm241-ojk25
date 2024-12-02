@@ -405,7 +405,6 @@
     z-index: 2000;
     transition: opacity 0.4s ease, visibility 0.4s ease;
     cursor: pointer;
-    box-shadow: 4px 4px 13.01px 0px rgba(0, 0, 0, 0.25);
     border-radius: 3px;
 
 }
@@ -414,6 +413,7 @@
     background: #456;
     border-radius: 3px;
     max-width: 360px;
+    box-shadow: 4px 4px 13.01px 0px rgba(0, 0, 0, 0.25);
 }
 .menu-arrow {
     display: block;
@@ -801,6 +801,10 @@
         margin-bottom: 0;
         transition: 0.3s border-bottom ease;
         margin-right: 28px;
+    }
+
+    .more-menu-up{
+        top: 178px !important;
     }
 
 }
